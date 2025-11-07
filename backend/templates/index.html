@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cangaceiros HT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <span>Cangaceiros High Tech - Uma nova era.</span>
+            </div>
+            <button id="saveBtn" class="save-btn">
+                <i class="fas fa-save"></i> Salvar Rascunho
+            </button>
+        </div>
+        <div class="container progress-bar">
+            <div class="progress-steps">
+                <div class="step" id="step-1">
+                    <div class="step-circle">1</div>
+                    <span>Título e descrição</span>
+                </div>
+                <div class="step" id="step-2">
+                    <div class="step-circle">2</div>
+                    <span>Definir objetivos</span>
+                </div>
+                <div class="step" id="step-3">
+                    <div class="step-circle">3</div>
+                    <span>Configurações</span>
+                </div>
+                <div class="step" id="step-4">
+                    <div class="step-circle">4</div>
+                    <span>Plano de aula</span>
+                </div>
+                <div class="step" id="step-5">
+                    <div class="step-circle">5</div>
+                    <span>Revisar e editar</span>
+                </div>
+                <div class="progress-line"><div class="progress-fill"></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main container">
+        <!-- Step 1: Título e descrição -->
+        <section id="step1" class="step-content active">
+            <div class="step-header">
+                <h1>Comece dando um título para sua aula</h1>
+                <p>O título ajudará você e seus alunos a identificarem o que é uma aula mais facilmente.</p>
+            </div>
+            <div class="lesson-form">
+                <div class="form-group">
+                    <label for="lessonTitle">Título da Aula</label>
+                    <input type="text" id="lessonTitle" name="lessonTitle" placeholder="Ex: Células Animais" required>
+                </div>
+                <div class="form-group">
+                    <label for="lessonDescription">Descrição da Aula</label>
+                    <textarea id="lessonDescription" name="lessonDescription" placeholder="Descreva brevemente o que será abordado na aula" required></textarea>
+                </div>
+                <div class="step-actions">
+                    <button type="button" class="btn btn-primary nextBtn">Próximo <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Definir objetivos -->
+        <section id="step2" class="step-content">
+            <div class="step-header">
+                <h1>Defina os objetivos de aprendizagem</h1>
+                <p>O que os alunos deverão ser capazes de fazer após esta aula?</p>
+            </div>
+            <div class="lesson-form">
+                <div class="form-group">
+                    <label for="learningObjectives">Objetivos de Aprendizagem</label>
+                    <textarea id="learningObjectives" name="learningObjectives" placeholder="Ex: Identificar as principais partes de uma célula animal." required></textarea>
+                </div>
+                <div class="step-actions">
+                    <button type="button" class="btn btn-secondary prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                    <button type="button" class="btn btn-primary nextBtn">Próximo <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: Configurações -->
+        <section id="step3" class="step-content">
+            <div class="step-header">
+                <h1>Configurações da Turma e Aula</h1>
+                <p>Ajuste as configurações para personalizar o plano de aula.</p>
+            </div>
+            <div class="lesson-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="subject">Disciplina</label>
+                        <input type="text" id="subject" name="subject" placeholder="Ex: Biologia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gradeLevel">Nível de Ensino</label>
+                        <select id="gradeLevel" name="gradeLevel" required>
+                            <option value="">Selecione</option>
+                            <option value="fundamental1">Ensino Fundamental I</option>
+                            <option value="fundamental2">Ensino Fundamental II</option>
+                            <option value="medio">Ensino Médio</option>
+                            <option value="superior">Ensino Superior</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentCount">Número de Alunos</label>
+                        <input type="number" id="studentCount" name="studentCount" placeholder="Ex: 25" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="averageAge">Idade Média da Turma</label>
+                        <input type="number" id="averageAge" name="averageAge" placeholder="Ex: 15" min="5" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="duration">Duração da Aula (minutos)</label>
+                        <input type="number" id="duration" name="duration" placeholder="Ex: 50" min="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resources">Recursos Disponíveis</label>
+                        <input type="text" id="resources" name="resources" placeholder="Ex: Projetor, lousa interativa, laboratório">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="hasNeurodivergent" name="hasNeurodivergent">
+                        Incluir estratégias para alunos com neurodivergências
+                    </label>
+                </div>
+                <div class="step-actions">
+                    <button type="button" class="btn btn-secondary prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                    <button type="button" class="btn btn-primary nextBtn">Gerar Plano de Aula <i class="fas fa-magic"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 4: Geração do Plano -->
+        <section id="step4" class="step-content">
+            <div class="generating-content">
+                <h1>Estamos criando o conteúdo da aula!</h1>
+                <p>Isso deve levar entre 1 e 2 minutos.</p>
+                <div id="lessonResult" class="lesson-result"></div>
+                <div class="step-actions">
+                    <button type="button" class="btn btn-secondary prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                    <button type="button" class="btn btn-primary nextBtn">Próximo <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 5: Revisar -->
+        <section id="step5" class="step-content">
+            <div class="step-header">
+                <h1>Revisar e editar</h1>
+                <p>Aqui você pode revisar o plano de aula gerado e fazer ajustes finais.</p>
+            </div>
+            <div id="lessonResultFinal" class="lesson-result"></div>
+            <div class="step-actions">
+                <button type="button" class="btn btn-secondary prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                <button id="newLessonBtn" class="btn btn-primary"><i class="fas fa-plus"></i> Nova Aula</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
