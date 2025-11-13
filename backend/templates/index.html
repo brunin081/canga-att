@@ -31,15 +31,23 @@
                 </div>
                 <div class="step" id="step-3">
                     <div class="step-circle">3</div>
-                    <span>Configurações</span>
+                    <span>Metodologia e Conteúdo</span>
                 </div>
                 <div class="step" id="step-4">
                     <div class="step-circle">4</div>
-                    <span>Plano de aula</span>
+                    <span>Configurações</span>
                 </div>
                 <div class="step" id="step-5">
                     <div class="step-circle">5</div>
+                    <span>Pacote High Tech</span>
+                </div>
+                <div class="step" id="step-6">
+                    <div class="step-circle">6</div>
                     <span>Revisar e editar</span>
+                </div>
+                </div>  class="step" id="step-7">
+                    <div class="step-circle">7</div>
+                    <span>Saídas esperadas</span>
                 </div>
                 <div class="progress-line"><div class="progress-fill"></div></div>
             </div>
@@ -86,8 +94,25 @@
             </div>
         </section>
 
+         <section id="step3" class="step-content">
+            <div class="step-header">
+                <h1>Metodologia e Conteúdo</h1>
+                <p>Qual metodologia você deseja utilizar?</p>
+            </div>
+            <div class="lesson-form">
+                <div class="form-group">
+                    <label for="learningObjectives">Quais tópicos/conhecimentos precisam necessariamente estar na aula?</label>
+                    <textarea id="learningObjectives" name="learningObjectives" placeholder="Insira aqui o(s) tópico(s)." required></textarea>
+                </div>
+                <div class="step-actions">
+                    <button type="button" class="btn btn-secondary prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+                    <button type="button" class="btn btn-primary nextBtn">Próximo <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
         <!-- Step 3: Configurações -->
-        <section id="step3" class="step-content">
+        <section id="step4" class="step-content">
             <div class="step-header">
                 <h1>Configurações da Turma e Aula</h1>
                 <p>Ajuste as configurações para personalizar o plano de aula.</p>
@@ -137,13 +162,13 @@
                 </div>
                 <div class="step-actions">
                     <button type="button" class="btn btn-secondary prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
-                    <button type="button" class="btn btn-primary nextBtn">Gerar Plano de Aula <i class="fas fa-magic"></i></button>
+                    <button type="button" class="btn btn-primary nextBtn">Gerar Pacote <i class="fas fa-magic"></i></button>
                 </div>
             </div>
         </section>
 
         <!-- Step 4: Geração do Plano -->
-        <section id="step4" class="step-content">
+        <section id="step5" class="step-content">
             <div class="generating-content">
                 <h1>Estamos criando o conteúdo da aula!</h1>
                 <p>Isso deve levar entre 1 e 2 minutos.</p>
@@ -156,7 +181,7 @@
         </section>
 
         <!-- Step 5: Revisar -->
-        <section id="step5" class="step-content">
+        <section id="step6" class="step-content">
             <div class="step-header">
                 <h1>Revisar e editar</h1>
                 <p>Aqui você pode revisar o plano de aula gerado e fazer ajustes finais.</p>
